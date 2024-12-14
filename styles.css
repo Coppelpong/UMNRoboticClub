@@ -219,18 +219,79 @@ nav ul li a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.popup-content {
+/* Popup Container */
+.popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
     padding: 20px;
-    position: relative;
 }
 
-.popup .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
+/* Popup Card */
+.popup-card {
+    display: flex;
+    flex-direction: row; /* Menjadikan konten horizontal */
+    background-color: #121212; /* Latar belakang gelap */
+    color: #ffffff; /* Teks putih */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow */
+    border-radius: 12px; /* Sudut melengkung */
+    overflow: hidden;
+    max-width: 900px;
 }
+
+/* Popup Konten (Teks) */
+.popup-content {
+    flex: 1; /* Memenuhi ruang di dalam card */
+    padding: 20px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.popup-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Judul kuning emas */
+}
+
+.popup-content p {
+    margin: 0;
+    color: #e0e0e0; /* Teks abu-abu terang */
+}
+
+/* Popup Gambar */
+.popup-image {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
+}
+
+.popup-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Hover Efek */
+.popup-card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .popup-card {
+        flex-direction: column; /* Jika layar kecil, menjadi vertikal */
+    }
+
+    .popup-image {
+        height: 200px; /* Sesuaikan tinggi gambar */
+    }
+}
+
 .trapezoid-link {
     display: block;
     text-decoration: none;
