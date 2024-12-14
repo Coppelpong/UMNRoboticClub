@@ -244,11 +244,53 @@ nav ul li a {
     background-color: rgba(255, 255, 255, 0.2); /* Efek hover */
     transition: background-color 0.3s;
 }
-footer {
+/* Gaya untuk Footer */
+.footer {
+    background-color: #121212; /* Warna latar belakang gelap */
+    color: white; /* Warna teks */
     text-align: center;
-    margin: auto;
+    padding: 20px 0;
+    border-top: 3px solid #ffcc00; /* Border atas kuning emas */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Shadow halus */
 }
 
-footer p {
-    margin: 0;
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
+
+.footer-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.footer-subtitle {
+    font-size: 1em;
+    margin: 5px 0;
+    font-style: italic; /* Menambahkan gaya miring */
+}
+
+.footer-socials {
+    margin: 15px 0;
+}
+
+.social-link {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease; /* Efek hover */
+}
+
+.social-link:hover {
+    color: #ffcc00; /* Ubah warna menjadi kuning emas saat di-hover */
+}
+
+.footer-copyright {
+    font-size: 0.9em;
+    margin: 10px 0;
+    color: #cccccc; /* Teks copyright lebih redup */
+}
+
