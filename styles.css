@@ -1,4 +1,4 @@
-body {
+            body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -245,14 +245,13 @@ nav ul li a {
     background-color: rgba(255, 255, 255, 0.2); /* Efek hover */
     transition: background-color 0.3s;
 }
-/* Gaya untuk Footer */
-.footer {
-    background-color: #121212; /* Warna latar belakang gelap */
-    color: white; /* Warna teks */
+footer {
     text-align: center;
-    padding: 20px 0;
-    border-top: 3px solid #ffcc00; /* Border atas kuning emas */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Shadow halus */
+    margin: auto;
+}
+
+footer p {
+    margin: 0;
 }
 
 .footer-content {
