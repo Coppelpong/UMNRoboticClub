@@ -207,30 +207,74 @@ nav ul li a {
     opacity: 1;
 }
 
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    background-color: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Popup Overlay (Posisi popup tetap di atas konten lain, tidak mempengaruhi footer) */
+.popup-overlay {
+    position: fixed; /* Tetap di atas layar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Lebih tinggi dari konten lain */
 }
 
-.popup-content {
+/* Popup Box */
+.popup-box {
+    background-color: #fff;
     padding: 20px;
-    position: relative;
+    width: 90%;
+    max-width: 500px;
+    max-height: 70%;
+    border-radius: 8px;
+    overflow-y: auto; /* Scroll jika konten panjang */
+    position: relative; /* Relative agar tetap rapi */
+    z-index: 1001; /* Lebih tinggi dari overlay */
 }
 
-.popup .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
+/* Footer Tetap di Bawah */
+footer {
+    text-align: center;
+    margin: 0 auto;
+    background-color: #222; /* Warna gelap */
+    color: #fff;
+    padding: 20px 0;
+    position: relative; /* Tetap di posisi normal */
+    z-index: 1; /* Pastikan lebih rendah dari popup */
 }
+
+/* Kontainer Utama */
+.content {
+    padding-bottom: 100px; /* Memberi jarak agar footer tidak menumpuk */
+}
+
+/* Popup Gambar */
+.popup-image {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.popup-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Tambahan untuk Handphone */
+@media (max-width: 768px) {
+    .popup-box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 0.9em;
+        padding: 15px 0;
+    }
+}
+
 
 .trapezoid-link {
     display: block;
