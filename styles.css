@@ -244,3 +244,11 @@ nav ul li a {
     background-color: rgba(255, 255, 255, 0.2); /* Efek hover */
     transition: background-color 0.3s;
 }
+footer {
+    text-align: center;
+    margin: auto;
+}
+
+footer p {
+    margin: 0;
+}
