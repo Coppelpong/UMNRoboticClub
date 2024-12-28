@@ -17,53 +17,61 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(51, 51, 51, 0.6);
+            background-color: #33333397;
             padding: 10px 20px;
             color: aqua;
             font-size: 20px;
             font-weight: bold;
         }
 
-        .logo {
-            width: 45px;
-        }
+        .logo { 
+            width: 45px; 
+        } 
 
-        .logo.left {
+        .logo.left{
             height: 80px;
             width: 160px;
         }
 
-        .logo.right {
+        .logo.right{
             height: 80px;
         }
 
-        nav {
-            display: flex;
-            flex: 1;
-        }
+       .logo.left, .logo.right { 
+            align-self: flex-start; 
+       } 
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+       nav { 
+            display: flex; 
+            align-items: left; 
+            flex: 1; 
+       } 
 
-        nav ul li {
+       nav ul { 
+            display: flex; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+       } 
+
+       nav ul li { 
+            margin-right: 10px; 
+            margin-top: -10px;
             margin-left: 15px;
-        }
+       } 
 
-        nav ul li a {
-            color: aqua;
+       nav ul li a { 
+            color: aqua; 
             text-decoration: none;
-        }
+       }
 
-        .social-icons {
+       .social-icons {
             display: flex;
-        }
+       }
 
-        .social-icons a {
+       .social-icons a {
             margin-left: 10px;
+            margin-top: -10px;
         }
 
         .social-icons img {
@@ -76,7 +84,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 20px; /* Menambahkan jarak antar kotak */
             padding: 20px;
         }
 
@@ -137,7 +145,7 @@
 
         .popup-content {
             position: relative;
-            background-color: rgba(68, 68, 68, 0.62);
+            background-color: #4444449e;
         }
 
         .popup-content p {
@@ -171,12 +179,12 @@
             display: block;
         }
 
-        footer {
+        footer { 
             text-align: center;
             margin: auto;
-            background-color: rgba(51, 51, 51, 0.7);
-            padding: 20px;
-            border-radius: 10px;
+            background-color: rgba(51, 51, 51, 0.7); /* Warna latar belakang box dengan transparansi */
+            padding: 20px; /* Padding di sekitar konten footer */
+            border-radius: 10px; /* Membuat sudut lebih melengkung */
         }
 
         footer p {
@@ -198,11 +206,33 @@
     </header>
 
     <div class="content">
-        <!-- Squares with images and hover text -->
-        <!-- Repeat the block below as needed -->
-        <div class="square" data-text="Description of Arduino UNO." onclick="showPopup(this)">
-            <img src="image/stu_1.png" alt="Arduino UNO">
+        <div class="square" data-text="Arduino UNO is a microcontroller board based on the ATmega328P. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz ceramic resonator, a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started. You can tinker with your UNO without worrying too much about doing something wrong, worst case scenario you can replace the chip for a few dollars and start over again." onclick="showPopup(this)">
+            <img src="image/stu_1.png" alt="Image 1">
             <div class="hover-text">Arduino UNO</div>
+        </div>
+        <div class="square" data-text="An LED (Light Emitting Diode) is a small electronic component that emits light when an electric current flows through it. In the context of Arduino, an LED is often used to provide visual feedback, such as indicating that the system is functioning, signaling errors, or showing the state of a program." onclick="showPopup(this)">
+            <img src="image/stu_2.png" alt="Image 2">
+            <div class="hover-text">LED</div>
+        </div>
+        <div class="square" data-text="An ultrasonic sensor is a device that measures distance by emitting ultrasonic sound waves and detecting the time it takes for the sound waves to reflect back from an object. It is widely used in robotics, automation, and obstacle detection systems." onclick="showPopup(this)">
+            <img src="image/stu_3.png" alt="Image 3">
+            <div class="hover-text">Ultrasonic Sensor</div>
+        </div>
+        <div class="square" data-text="A resistor is an electronic component that resists the flow of electric current, helping to control the voltage and current in a circuit. In Arduino projects, resistors are essential for protecting components and ensuring they operate safely within their specifications." onclick="showPopup(this)">
+            <img src="image/stu_4.png" alt="Image 4">
+            <div class="hover-text">Resistor</div>
+        </div>
+        <div class="square" data-text="A jumper cable (or jumper wire) is an insulated wire used to make temporary or semi-permanent electrical connections between components in a circuit, often on a breadboard or Arduino project. They are essential for prototyping and testing electronic circuits." onclick="showPopup(this)">
+            <img src="image/stu_5.png" alt="Image 1">
+            <div class="hover-text">Jumper Cable</div>
+        </div>
+        <div class="square" data-text="A breadboard is an essential tool in Arduino prototyping. It is used to build and test circuits without the need for soldering, making it perfect for experimentation and development. It consists of a grid of holes that connect in specific patterns, allowing components to be inserted and connected together in various configurations." onclick="showPopup(this)">
+            <img src="image/stu_6.png" alt="Image 2">
+            <div class="hover-text">Breadboard</div>
+        </div>
+        <div class="square" data-text="A breadboard is an essential tool in Arduino prototyping. It is used to build and test circuits without the need for soldering, making it perfect for experimentation and development. It consists of a grid of holes that connect in specific patterns, allowing components to be inserted and connected together in various configurations." onclick="showPopup(this)">
+            <img src="image/stu_7.png" alt="Image 3">
+            <div class="hover-text">Capacitor</div>
         </div>
     </div>
 
@@ -214,26 +244,13 @@
         </div>
     </div>
 
-    <footer>
-        <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic<br></p>
-        <p>&copy; 2024 | This site has copyright.</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/umnroboticclub" target="_blank">
-                <img src="image/insta_icon.png" alt="Instagram">
-            </a>
-            <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
-                <img src="image/line_icon.png" alt="LINE">
-            </a>
-        </div>
-        <img src="image/umn_logo.png" alt="Right Logo" class="logo right">
-    </footer>
-
     <script>
         function showPopup(element) {
             const popup = document.getElementById('popup');
             const overlay = document.getElementById('overlay');
             const popupText = document.getElementById('popup-text');
-            popupText.textContent = element.getAttribute('data-text');
+            const hoverText = element.getAttribute('data-text');
+            popupText.textContent = hoverText;
             popup.classList.add('active');
             overlay.classList.add('active');
         }
@@ -245,5 +262,18 @@
             overlay.classList.remove('active');
         }
     </script>
+    <footer>
+        <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic<br></p>
+        <p>&copy; 2024 | This site has copyright.</p>
+        <div class="social-icons">
+                <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
+                    <img src="image/insta_icon.png" alt="Instagram">
+                </a>
+                <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
+                    <img src="image/line_icon.png" alt="LINE">
+                </a>
+            </div>
+        <img src="image/umn_logo.png" alt="Right Logo" class="logo right">
+    </footer>
 </body>
 </html>
