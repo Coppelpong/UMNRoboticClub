@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,34 +14,66 @@
             background-image: url("image/schedule_bg.png");
         }
 
-        .left-square {
-            width: 250px;
-            height: 250px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            text-align: center;
-            border-radius: 8px;
-            margin: 20px;
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 30px;
         }
 
-        .flatpickr-calendar {
-            width: 100%;
+        .left-square, .right-square {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .left-square {
+            width: 300px;
+            text-align: center;
         }
 
         .right-square {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
+            flex-grow: 1;
+        }
+
+        #calendar {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #calendar:hover {
+            background-color: #444;
             color: white;
-            border-radius: 8px;
+        }
+
+        .flatpickr-calendar {
+            margin-top: 10px;
+        }
+
+        ul#schedule-details {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul#schedule-details li {
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #000;
+            color: white;
+            padding: 20px;
         }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Include Flatpickr Library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
     <header>
@@ -49,40 +85,56 @@
                 <li><a href="studies.html">Studies</a></li>
                 <li><a href="schedule.html" class="active">Schedule</a></li>
             </ul>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
-                    <img src="image/insta_icon.png" alt="Instagram">
-                </a>
-                <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
-                    <img src="image/line_icon.png" alt="LINE">
-                </a>
-            </div>
         </nav>
         <img src="image/umn_logo.png" alt="UMN Robotic Club Logo" class="logo right">
     </header>
     <main>
         <div class="content">
-            <!-- Calendar Container -->
+            <!-- Kalender -->
             <div class="left-square">
-                <h3>Pick a Date</h3>
-                <input id="calendar" type="text" placeholder="Select a date" readonly>
+                <h3>Pilih Tanggal</h3>
+                <input id="calendar" type="text" placeholder="Pilih tanggal" readonly>
             </div>
-            <!-- Schedule Display -->
+            <!-- Detail Jadwal -->
             <div class="right-square">
-                <h2>Meeting Schedule:</h2>
+                <h2>Detail Meeting:</h2>
                 <ul id="schedule-details">
-                    <li>Time: --:--</li>
-                    <li>Location: --</li>
-                    <li>Details: No meeting in this semester</li>
+                    <li><strong>Pilih tanggal untuk melihat detail jadwal</strong></li>
                 </ul>
             </div>
         </div>
     </main>
-    <footer class="text-center bg-dark text-white py-3">
-        <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic<br></p>
-        <p>&copy; 2024 | This site has copyright.</p>
+    <footer>
+        <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic</p>
+        <p>&copy; 2024 | Hak Cipta Dilindungi</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="scripts.js"></script>
+    <script>
+        const meetingSchedule = {
+            "2024-01-03": "Meeting pukul 18:00 di Lab Room",
+            "2024-01-10": "Meeting pukul 18:00 di Lab Room",
+            "2024-01-17": "Meeting pukul 18:00 di Lab Room",
+        };
+
+        flatpickr("#calendar", {
+            inline: true,
+            enableTime: false,
+            dateFormat: "Y-m-d",
+            onChange: function(selectedDates, dateStr) {
+                const details = document.getElementById("schedule-details");
+                const meetingInfo = meetingSchedule[dateStr];
+
+                // Clear existing schedule details
+                details.innerHTML = "";
+
+                if (meetingInfo) {
+                    // Add meeting information
+                    details.innerHTML += `<li>${meetingInfo}</li>`;
+                } else {
+                    details.innerHTML += `<li>Tidak ada meeting pada tanggal ini.</li>`;
+                }
+            },
+        });
+    </script>
 </body>
 </html>
