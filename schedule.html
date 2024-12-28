@@ -10,8 +10,47 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-size: cover;
             background-image: url("image/schedule_bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        header .logo {
+            max-height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #444;
         }
 
         .content {
@@ -25,8 +64,8 @@
         .left-square, .right-square {
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .left-square {
@@ -53,25 +92,27 @@
             color: white;
         }
 
-        .flatpickr-calendar {
-            margin-top: 10px;
-        }
-
         ul#schedule-details {
             list-style-type: none;
             padding: 0;
             margin: 0;
+            font-size: 18px;
         }
 
         ul#schedule-details li {
-            margin: 5px 0;
+            margin: 10px 0;
         }
 
         footer {
             text-align: center;
-            background-color: #000;
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -86,7 +127,7 @@
                 <li><a href="schedule.html" class="active">Schedule</a></li>
             </ul>
         </nav>
-        <img src="image/umn_logo.png" alt="UMN Robotic Club Logo" class="logo right">
+        <img src="image/umn_logo.png" alt="UMN Logo" class="logo right">
     </header>
     <main>
         <div class="content">
@@ -97,7 +138,7 @@
             </div>
             <!-- Detail Jadwal -->
             <div class="right-square">
-                <h2>Detail Meeting:</h2>
+                <h2>Detail Meeting</h2>
                 <ul id="schedule-details">
                     <li><strong>Pilih tanggal untuk melihat detail jadwal</strong></li>
                 </ul>
@@ -105,7 +146,8 @@
         </div>
     </main>
     <footer>
-        <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic</p>
+        <p>UMN.Robotic.Club</p>
+        <p>Club Association of UMN Robotic</p>
         <p>&copy; 2024 | Hak Cipta Dilindungi</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -124,11 +166,9 @@
                 const details = document.getElementById("schedule-details");
                 const meetingInfo = meetingSchedule[dateStr];
 
-                // Clear existing schedule details
                 details.innerHTML = "";
 
                 if (meetingInfo) {
-                    // Add meeting information
                     details.innerHTML += `<li>${meetingInfo}</li>`;
                 } else {
                     details.innerHTML += `<li>Tidak ada meeting pada tanggal ini.</li>`;
