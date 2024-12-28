@@ -83,36 +83,6 @@
         <p>&copy; 2024 | This site has copyright.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-        // Initialize Flatpickr Calendar
-        const calendar = document.getElementById('calendar');
-        const scheduleDetails = document.getElementById('schedule-details');
-
-        // Predefined Meeting Dates
-        const meetingSchedule = {
-            '2024-01-03': { time: '18:00', location: 'Room A', details: 'Robotic Club Workshop' },
-            '2024-01-10': { time: '18:00', location: 'Room A', details: 'Weekly Robotic Meeting' }
-        };
-
-        flatpickr(calendar, {
-            inline: true,
-            onChange: function(selectedDates, dateStr) {
-                if (meetingSchedule[dateStr]) {
-                    const { time, location, details } = meetingSchedule[dateStr];
-                    scheduleDetails.innerHTML = `
-                        <li>Time: ${time}</li>
-                        <li>Location: ${location}</li>
-                        <li>Details: ${details}</li>
-                    `;
-                } else {
-                    scheduleDetails.innerHTML = `
-                        <li>Time: --:--</li>
-                        <li>Location: --</li>
-                        <li>Details: No meeting in this semester</li>
-                    `;
-                }
-            }
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
