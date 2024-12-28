@@ -6,53 +6,96 @@
     <title>Schedule</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url("image/schedule_bg.png");
             background-size: cover;
-            background-repeat: no-repeat;
-            color: white;
+            background-image: url("image/studies_bg.png");
+            color: aqua;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #33333397;
             padding: 10px 20px;
-            background-color: rgba(0, 0, 0, 0.8);
+            color: aqua;
+            font-size: 20px;
+            font-weight: bold;
         }
 
-        header .logo {
-            max-height: 50px; /* Menyesuaikan ukuran logo */
+        .logo {
+            width: 45px;
+        }
+
+        .logo.left {
+            height: 80px;
+            width: 160px;
+        }
+
+        .logo.right {
+            height: 80px;
+        }
+
+        nav {
+            display: flex;
+            align-items: left;
+            flex: 1;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
-            gap: 20px;
+            list-style: none;
             margin: 0;
             padding: 0;
         }
 
         nav ul li {
-            display: inline;
+            margin-right: 10px;
+            text-align: right;
+            margin-top: -10px;
+            margin-left: 15px;
         }
 
         nav ul li a {
+            color: aqua;
             text-decoration: none;
-            color: white;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
         }
 
-        nav ul li a:hover, nav ul li a.active {
-            background-color: #444;
+        .social-icons {
+            display: flex;
         }
 
+        .social-icons a {
+            margin-left: 10px;
+            margin-top: -10px;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: auto;
+            background-color: rgba(51, 51, 51, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
         .content {
             display: flex;
             justify-content: center;
@@ -102,38 +145,20 @@
         ul#schedule-details li {
             margin: 10px 0;
         }
-
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            font-size: 14px;
-        }
-
-        footer .footer-left p, footer .footer-right p {
-            margin: 0;
-        }
-
-        footer .footer-right img {
-            max-height: 30px; /* Menyesuaikan ukuran logo footer */
-        }
     </style>
 </head>
 <body>
     <header>
-        <img src="image/ukm_logo.png" alt="UMN Robotic Club Logo" class="logo left">
+        <img src="image/ukm_logo.png" alt="Left Logo" class="logo left">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="event.html">Event</a></li>
                 <li><a href="studies.html">Studies</a></li>
-                <li><a href="schedule.html" class="active">Schedule</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
             </ul>
         </nav>
-        <img src="image/umn_logo.png" alt="UMN Logo" class="logo right">
+        <img src="image/umn_logo.png" alt="Right Logo" class="logo right">
     </header>
     <main>
         <div class="content">
@@ -152,12 +177,15 @@
         </div>
     </main>
     <footer>
-        <div class="footer-left">
-            <p>UMN.Robotic.Club</p>
-            <p>Club Association of UMN Robotic</p>
-        </div>
-        <div class="footer-right">
-            <img src="image/umn_logo.png" alt="UMN Logo Footer">
+        <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic</p>
+        <p>&copy; 2024 | This site has copyright.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
+                <img src="image/insta_icon.png" alt="Instagram">
+            </a>
+            <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
+                <img src="image/line_icon.png" alt="LINE">
+            </a>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
