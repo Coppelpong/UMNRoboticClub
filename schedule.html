@@ -1,19 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-size: cover;
             background-image: url("image/schedule_bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        header .logo {
+            max-height: 50px; /* Menyesuaikan ukuran logo */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #444;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .left-square, .right-square {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .left-square {
+            width: 300px;
+            text-align: center;
+        }
+
+        .right-square {
+            flex-grow: 1;
+        }
+
+        #calendar {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #calendar:hover {
+            background-color: #444;
+            color: white;
+        }
+
+        ul#schedule-details {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        ul#schedule-details li {
+            margin: 10px 0;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 14px;
+        }
+
+        footer .footer-left p, footer .footer-right p {
+            margin: 0;
+        }
+
+        footer .footer-right img {
+            max-height: 30px; /* Menyesuaikan ukuran logo footer */
         }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -25,37 +132,59 @@
                 <li><a href="studies.html">Studies</a></li>
                 <li><a href="schedule.html" class="active">Schedule</a></li>
             </ul>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
-                    <img src="image/insta_icon.png" alt="Instagram">
-                </a>
-                <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
-                    <img src="image/line_icon.png" alt="LINE">
-                </a>
-            </div>
         </nav>
-        <img src="image/umn_logo.png" alt="UMN Robotic Club Logo" class="logo right">
+        <img src="image/umn_logo.png" alt="UMN Logo" class="logo right">
     </header>
     <main>
         <div class="content">
-            <div class="left-circle">
-                <div id="datetime"></div>
+            <!-- Kalender -->
+            <div class="left-square">
+                <h3>Pilih Tanggal</h3>
+                <input id="calendar" type="text" placeholder="Pilih tanggal" readonly>
             </div>
+            <!-- Detail Jadwal -->
             <div class="right-square">
-                <h2>Meeting Schedule:</h2>
-                    <li>Time:</li>
-                    <li>--:-- AM</li>
-                    <li>--:-- PM</li>
-                    <li>Location:</li>
-                    <li>--</li>
-                    <li>Details: No meeting in this semester</li>
+                <h2>Detail Meeting</h2>
+                <ul id="schedule-details">
+                    <li><strong>Pilih tanggal untuk melihat detail jadwal</strong></li>
+                </ul>
             </div>
         </div>
-        <footer class="text-center bg-dark text-white py-3">
-    <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic<br></p>
-    <p>&copy; 2024 | This site has copyright.</p>
-</footer>
     </main>
-    <script src="scripts.js"></script>
+    <footer>
+        <div class="footer-left">
+            <p>UMN.Robotic.Club</p>
+            <p>Club Association of UMN Robotic</p>
+        </div>
+        <div class="footer-right">
+            <img src="image/umn_logo.png" alt="UMN Logo Footer">
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        const meetingSchedule = {
+            "2024-01-03": "Meeting pukul 18:00 di Lab Room",
+            "2024-01-10": "Meeting pukul 18:00 di Lab Room",
+            "2024-01-17": "Meeting pukul 18:00 di Lab Room",
+        };
+
+        flatpickr("#calendar", {
+            inline: true,
+            enableTime: false,
+            dateFormat: "Y-m-d",
+            onChange: function(selectedDates, dateStr) {
+                const details = document.getElementById("schedule-details");
+                const meetingInfo = meetingSchedule[dateStr];
+
+                details.innerHTML = "";
+
+                if (meetingInfo) {
+                    details.innerHTML += `<li>${meetingInfo}</li>`;
+                } else {
+                    details.innerHTML += `<li>Tidak ada meeting pada tanggal ini.</li>`;
+                }
+            },
+        });
+    </script>
 </body>
 </html>
