@@ -34,17 +34,15 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 updateDateTime(); // Initial call to display immediately on page load
 
-// Show a popup with additional information
-function showPopup(element) {
+function showPopup(content) {
     const popup = document.getElementById('popup');
-    const popupText = document.getElementById('popup-text');
-    const hoverText = element.querySelector('.hover-text').innerText;
-    popupText.innerText = hoverText; // Display hover text in the popup
-    popup.style.display = 'block';  // Show the popup
+    const popupContent = document.getElementById('popup-content');
+    popupContent.textContent = content;
+    popup.style.display = 'block';
 }
 
-// Hide the popup
 function closePopup() {
     const popup = document.getElementById('popup');
-    popup.style.display = 'none';   // Hide the popup
+    popup.style.display = 'none';
 }
+
