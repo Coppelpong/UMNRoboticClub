@@ -46,3 +46,58 @@ function closePopup() {
     popup.style.display = 'none';
 }
 
+
+// scripts.js
+
+// Fungsi untuk menghasilkan jadwal setiap hari Rabu
+function generateWednesdaySchedules(year) {
+    const schedules = {};
+    const startDate = new Date(`${year}-01-01`);
+    const endDate = new Date(`${year}-12-31`);
+
+    let currentDate = startDate;
+
+    while (currentDate <= endDate) {
+        if (currentDate.getDay() === 3) { // 3 = Rabu
+            const dateStr = currentDate.toISOString().split('T')[0]; // Format YYYY-MM-DD
+            schedules[dateStr] = {
+                time: '18:00',
+                location: 'Room A',
+                details: 'Weekly Robotic Meeting'
+            };
+        }
+        currentDate.setDate(currentDate.getDate() + 1); // Tambah 1 hari
+    }
+
+    return schedules;
+}
+
+// Buat jadwal meeting untuk tahun 2024
+const meetingSchedule = generateWednesdaySchedules(2024);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const calendar = document.getElementById('calendar');
+    const scheduleDetails = document.getElementById('schedule-details');
+
+    // Inisialisasi kalender menggunakan Flatpickr
+    flatpickr(calendar, {
+        inline: true,
+        onChange: function (selectedDates, dateStr) {
+            if (meetingSchedule[dateStr]) {
+                const { time, location, details } = meetingSchedule[dateStr];
+                scheduleDetails.innerHTML = `
+                    <li>Time: ${time}</li>
+                    <li>Location: ${location}</li>
+                    <li>Details: ${details}</li>
+                `;
+            } else {
+                scheduleDetails.innerHTML = `
+                    <li>Time: --:--</li>
+                    <li>Location: --</li>
+                    <li>Details: No meeting in this semester</li>
+                `;
+            }
+        }
+    });
+});
+
