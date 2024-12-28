@@ -1,1 +1,112 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.squares-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.square {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.square:hover {
+    transform: scale(1.1);
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.popup .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: red;
+}
+
+.popup p {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.footer-icons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-icons img {
+    width: 30px;
+    height: auto;
+}
 
