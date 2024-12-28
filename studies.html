@@ -81,16 +81,21 @@
 
         .content {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 60px); /* Adjust according to header height */
+            gap: 20px; /* Menambahkan jarak antar kotak */
+            padding: 20px;
         }
+
         .square {
             position: relative;
             overflow: hidden;
             cursor: pointer;
             border-radius: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 150px;
+            height: 150px;
         }
 
         .square img {
@@ -173,8 +178,19 @@
         .popup.active {
             display: block;
         }
+
+        footer { 
+            text-align: center;
+            margin: auto;
+            background-color: rgba(51, 51, 51, 0.7); /* Warna latar belakang box dengan transparansi */
+            padding: 20px; /* Padding di sekitar konten footer */
+            border-radius: 10px; /* Membuat sudut lebih melengkung */
+        }
+
+        footer p {
+            margin: 0;
+        }
     </style>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -237,7 +253,6 @@
         </div>
     </div>
 
-    <script src="scripts.js"></script>
     <script>
         function showPopup(element) {
             const popup = document.getElementById('popup');
@@ -256,9 +271,9 @@
             overlay.classList.remove('active');
         }
     </script>
-    <footer class="text-center bg-dark text-white py-3">
-    <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic<br></p>
-    <p>&copy; 2024 | This site has copyright.</p>
-</footer>
+    <footer>
+        <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic<br></p>
+        <p>&copy; 2024 | This site has copyright.</p>
+    </footer>
 </body>
 </html>
