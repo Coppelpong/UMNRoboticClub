@@ -24,9 +24,9 @@
             font-weight: bold;
         }
 
-        .logo { 
-            width: 45px; 
-        } 
+        .logo {
+            width: 45px;
+        }
 
         .logo.left{
             height: 80px;
@@ -37,220 +37,70 @@
             height: 80px;
         }
 
-        .logo.left, .logo.right { 
-            align-self: flex-start; 
-        } 
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-        nav { 
-            display: flex; 
-            align-items: left; 
-            flex: 1; 
-        } 
-
-        nav ul { 
-            display: flex; 
-            list-style: none; 
-            margin: 0; 
-            padding: 0; 
-        } 
-
-        nav ul li { 
-            margin-right: 10px; 
+        nav ul li {
+            margin-right: 10px;
             margin-top: -10px;
             margin-left: 15px;
-        } 
+        }
 
-        nav ul li a { 
-            color: aqua; 
+        nav ul li a {
+            color: aqua;
             text-decoration: none;
-        }
-
-        .social-icons {
-            display: flex;
-        }
-
-        .social-icons a {
-            margin-left: 10px;
-            margin-top: -10px;
-        }
-
-        .social-icons img {
-            width: 24px;
-            height: 24px;
         }
 
         .content {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: calc(100vh - 60px); /* Adjust according to header height */
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
         }
 
         .left-square, .right-square {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            margin: 20px;
+            border-radius: 10px;
         }
 
         .left-square {
             width: 200px;
-            height: 300px;
+            min-height: 300px;
         }
 
         .right-square {
             width: 400px;
-            height: 300px;
-            border-radius: 15px;
+            min-height: 300px;
         }
 
-        /* Container to position the elements side by side */
-        .side-by-side {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px; /* Adjust the gap as needed */
-        }
-
-        .rectangle {
-            position: relative;
-            width: 400px;
-            height: 200px;
-            background-color: rgba(30, 30, 30, 0.6);
-            border: 3px solid aqua;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .rectangle:hover {
-            width: 1000px;
-            height: 500px;
-            background-color: rgba(30, 30, 30, 0.8);
-        }
-
-        .rectangle p {
+        .event-list {
+            list-style: none;
+            padding: 0;
             margin: 0;
-            font-size: 18px;
-            color: aqua;
-            z-index: 1;
         }
 
-        .rectangle .hover-text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: aqua;
-            opacity: 0;
-            visibility: hidden;
-            text-align: center;
-            padding: 10px;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 2;
-            font-size: 15px;
-        }
-
-        .rectangle:hover .hover-text {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .square {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            background-color: white;
-            border: 1px solid #ccc;
-            overflow: hidden;
-            transition: width 0.3s ease, height 0.3s ease;
+        .event-list li {
             cursor: pointer;
+            margin-bottom: 10px;
+            color: aqua;
         }
 
-        .square img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .event-list li:hover {
+            text-decoration: underline;
         }
 
-        .square .hover-text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .square:hover {
-            width: 200px;
-            height: 200px;
-        }
-
-        .square:hover .hover-text {
-            opacity: 1;
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            background-color: white;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .popup-content {
-            padding: 20px;
-            position: relative;
-        }
-
-        .popup .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .trapezoid-link {
-            display: block;
-            text-decoration: none;
-            color: white; /* Sesuaikan dengan warna tema */
-            text-align: center;
-            font-weight: bold;
-            padding: 10px;
-        }
-
-        .trapezoid-link:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Efek hover */
-            transition: background-color 0.3s;
-        }
-
-        footer { 
+        footer {
             text-align: center;
             margin: auto;
-            background-color: rgba(51, 51, 51, 0.7); /* Warna latar belakang box dengan transparansi */
-            padding: 20px; /* Padding di sekitar konten footer */
-            border-radius: 10px; /* Membuat sudut lebih melengkung */
+            background-color: rgba(51, 51, 51, 0.7);
+            padding: 20px;
+            border-radius: 10px;
         }
 
         footer p {
@@ -271,30 +121,19 @@
                 <li><a href="studies.html">Studies</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
             </ul>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
-                    <img src="image/insta_icon.png" alt="Instagram">
-                </a>
-                <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
-                    <img src="image/line_icon.png" alt="LINE">
-                </a>
-            </div>
         </nav>
-        <img src="image/umn_logo.png" alt="UMN Robotic Club Logo" class="logo right">
+        <img src="image/umn_logo.png" alt="UMN Logo" class="logo right">
     </header>
     <main>
         <div class="content">
             <div class="left-square">
-                <h2>No Upcoming Events</h2>
-                <label for="sort">Sort by:</label>
-                <select id="sort" name="sort">
-                    <option value="date">Date</option>
-                    <option value="name">Name</option>
-                </select>
+                <h2>Upcoming Events</h2>
+                <ul class="event-list" id="eventList">
+                </ul>
             </div>
-            <div class="right-square">
-                <h2>Event Highlights</h2>
-                <p>--</p>
+            <div class="right-square" id="eventDetails">
+                <h2>Event Details</h2>
+                <p>Select a date to view event details.</p>
             </div>
         </div>
     </main>
@@ -310,5 +149,45 @@
                 </a>
         </div>
     </footer>
+    <script>
+        const events = [
+            {
+                date: '2025-01-15',
+                title: 'Robotic Battle Tournament',
+                description: 'New Soho Lobby D Floor 1 Tournament Robots vs Robots.',
+            },
+            {
+                date: '2025-02-10',
+                title: 'Robotics Competition',
+                description: 'BINUS vs UMN, Lomba rakit dan program robot.',
+            },
+            {
+                date: '2025-03-05',
+                title: 'Robotics National Competition',
+                description: 'Jakarta Pusat, Monas, kompetisi nasional antar universitas di seluruh pulau Jawa.',
+            },
+        ];
+
+        const eventList = document.getElementById('eventList');
+        events.forEach((event, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = event.date;
+            listItem.dataset.index = index;
+            listItem.addEventListener('click', displayEventDetails);
+            eventList.appendChild(listItem);
+        });
+
+        function displayEventDetails(event) {
+            const eventIndex = event.target.dataset.index;
+            const selectedEvent = events[eventIndex];
+
+            const eventDetails = document.getElementById('eventDetails');
+            eventDetails.innerHTML = `
+                <h2>${selectedEvent.title}</h2>
+                <p><strong>Date:</strong> ${selectedEvent.date}</p>
+                <p>${selectedEvent.description}</p>
+            `;
+        }
+    </script>
 </body>
 </html>
