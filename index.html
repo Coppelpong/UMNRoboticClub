@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,73 @@
             padding: 0;
             background-size: cover;
             background-image: url("image/home_bg.png");
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .rectangle-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .rectangle {
+            width: 45%;
+            padding: 20px;
+            background-color: #444;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+        .rectangle .light-grey {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+            justify-content: center;
+            align-items: center;
+        }
+        .rectangle.active .light-grey {
+            display: flex;
+        }
+        footer {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,35 +105,36 @@
     </header>
     <div class="content">
         <div class="rectangle-container">
-            <div class="rectangle dark-grey">
-                    <p>About UMN Robotic Club</p>
-                </a>
-        <div class="light-grey">
-                    <span class="hover-text"> </span>
+            <div class="rectangle dark-grey" onclick="toggleActive(this)">
+                <p>About UMN Robotic Club</p>
+                <div class="light-grey">
+                    <span class="hover-text">Informasi tentang UMN Robotic Club</span>
                 </div>
-            <div class="rectangle dark-grey">
-                    <p>Join UMN Robotic Club!</p>
-                </a>
+            </div>
+            <div class="rectangle dark-grey" onclick="toggleActive(this)">
+                <p>Join UMN Robotic Club!</p>
                 <div class="light-grey">
                     <span class="hover-text">Entry unavailable this semester.</span>
                 </div>
             </div>
+        </div>
     </div>
-
-            
-       <footer>
+    <footer>
         <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic<br></p>
         <p>&copy; 2024 | This site has copyright.</p>
         <div class="social-icons">
-                <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
-                    <img src="image/insta_icon.png" alt="Instagram">
-                </a>
-                <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
-                    <img src="image/line_icon.png" alt="LINE">
-                </a>
+            <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
+                <img src="image/insta_icon.png" alt="Instagram">
+            </a>
+            <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
+                <img src="image/line_icon.png" alt="LINE">
+            </a>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+    <script>
+        function toggleActive(element) {
+            element.classList.toggle('active');
+        }
+    </script>
 </body>
-            
 </html>
