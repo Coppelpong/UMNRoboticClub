@@ -1,4 +1,4 @@
-            body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -6,6 +6,7 @@
     height: 100%;
     background-repeat: no-repeat;
     color: aqua;
+    background-image: url("image/home_bg.png");
 }
 
 header {
@@ -47,10 +48,10 @@ nav ul {
     list-style: none; 
     margin: 0; 
     padding: 0; 
+    gap: 20px; /* Menambahkan properti gap untuk memisahkan item menu */
 } 
 
 nav ul li { 
-    margin-right: 10px; 
     margin-top: -10px;
     margin-left: 15px;
 } 
@@ -62,10 +63,10 @@ nav ul li a {
 
 .social-icons {
     display: flex;
+    gap: 10px; /* Menambahkan properti gap untuk memisahkan ikon sosial */
 }
 
 .social-icons a {
-    margin-left: 10px;
     margin-top: -10px;
 }
 
@@ -111,6 +112,12 @@ nav ul li a {
     gap: 20px; /* Adjust the gap as needed */
 }
 
+.rectangle-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px; /* Menambahkan properti gap untuk memisahkan dua layout bar */
+}
 
 .rectangle {
     position: relative;
@@ -231,6 +238,7 @@ nav ul li a {
     font-size: 24px;
     cursor: pointer;
 }
+
 .trapezoid-link {
     display: block;
     text-decoration: none;
@@ -244,6 +252,7 @@ nav ul li a {
     background-color: rgba(255, 255, 255, 0.2); /* Efek hover */
     transition: background-color 0.3s;
 }
+
 footer { 
     text-align: center;
     margin: auto;
