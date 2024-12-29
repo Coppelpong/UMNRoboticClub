@@ -6,7 +6,6 @@ body {
     height: 100%;
     background-repeat: no-repeat;
     color: aqua;
-    background-image: url("image/home_bg.png");
 }
 
 header {
@@ -48,10 +47,10 @@ nav ul {
     list-style: none; 
     margin: 0; 
     padding: 0; 
-    gap: 20px; /* Menambahkan properti gap untuk memisahkan item menu */
 } 
 
 nav ul li { 
+    margin-right: 10px; 
     margin-top: -10px;
     margin-left: 15px;
 } 
@@ -63,10 +62,10 @@ nav ul li a {
 
 .social-icons {
     display: flex;
-    gap: 10px; /* Menambahkan properti gap untuk memisahkan ikon sosial */
 }
 
 .social-icons a {
+    margin-left: 10px;
     margin-top: -10px;
 }
 
@@ -112,12 +111,6 @@ nav ul li a {
     gap: 20px; /* Adjust the gap as needed */
 }
 
-.rectangle-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    gap: 20px; /* Menambahkan properti gap untuk memisahkan dua layout bar */
-}
 
 .rectangle {
     position: relative;
@@ -238,7 +231,6 @@ nav ul li a {
     font-size: 24px;
     cursor: pointer;
 }
-
 .trapezoid-link {
     display: block;
     text-decoration: none;
@@ -252,7 +244,6 @@ nav ul li a {
     background-color: rgba(255, 255, 255, 0.2); /* Efek hover */
     transition: background-color 0.3s;
 }
-
 footer { 
     text-align: center;
     margin: auto;
@@ -303,4 +294,89 @@ footer p {
     font-size: 0.9em;
     margin: 10px 0;
     color: #cccccc; /* Teks copyright lebih redup */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-image: url("image/home_bg.png");
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.rectangle-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.rectangle {
+    width: 45%;
+    padding: 20px;
+    background-color: #444;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.rectangle .light-grey {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle.active .light-grey {
+    display: flex;
+}
+
+footer {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
