@@ -32,6 +32,12 @@
             color: white;
             text-decoration: none;
         }
+        nav ul li a.active {
+            text-decoration: underline;
+            text-underline-offset: 5px; 
+            text-decoration-thickness: 2px;
+            color: aqua; 
+        }
         .social-icons {
             display: flex;
             gap: 10px;
@@ -75,6 +81,7 @@
             text-align: center;
             position: relative;
             bottom: 0;
+            color: aqua;
             width: 100%;
         }
     </style>
@@ -87,28 +94,25 @@
         <img src="image/ukm_logo.png" alt="UMN Robotic Club Logo" class="logo left">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="event.html">Event</a></li>
                 <li><a href="studies.html">Studies</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
             </ul>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
-                    <img src="image/insta_icon.png" alt="Instagram">
-                </a>
-                <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
-                    <img src="image/line_icon.png" alt="LINE">
-                </a>
-            </div>
         </nav>
-        <img src="image/umn_logo.png" alt="UMN Robotic Club Logo" class="logo right">
+        <a href="https://www.umn.ac.id/" target="_blank">
+        <img src="image/umn_logo.png" alt="UMN Logo" class="logo right">
+        </a>
     </header>
     <div class="content">
         <div class="rectangle-container">
             <div class="rectangle dark-grey" onclick="toggleActive(this)">
                 <p>About UMN Robotic Club</p>
                 <div class="light-grey">
-                    <span class="hover-text">Informasi tentang UMN Robotic Club</span>
+                    <span class="hover-text">UKM Robotic atau yang lebih dikenal dengan UMN Robotic Club (URC) merupakan sebuah unit kegiatan mahasiswa yang berfokus terhadap pengembangan otomasi, internet of things (IOT), dan artificial intelligent (AI) menjadi sebuah produk yang dapat memberikan kontribusi kepada masyarakat dalam mengatasi permasalahan yang ada. UMN Robotic Club berada dalam naungan prodi teknik elektro. Namun, anggota UMN Robotic Club terdiri dari berbagai macam prodi, seperti : Teknik informatika, teknik komputer, desain komunikasi visual, dan masih banyak lagi. Bukan hanya belajar mengenai robotika, dalam UKM Robotic dapat mengakomodasi pertukaran pengetahuan dari bermacam prodi.
+
+Untuk saat ini, UMN Robotic Club sedang berfokus untuk mengikuti kompetisi robotik nasional (KRI) kategori hexapod. Hexapod sendiri merupakan sebuah robot berkaki enam yang dapat bergerak sendiri mengikuti input sensor. Bukan hanya itu, kedepan akan banyak perlombaan di bidang robotika yang akan diikuti oleh para anggota UMN Robotic Club. Karena di UKM Robotic, kita tidak hanya belajar namun juga berkompetisi dengan universitas lagi. </span>
+                </span>
                 </div>
             </div>
             <div class="rectangle dark-grey" onclick="toggleActive(this)">
