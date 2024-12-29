@@ -189,16 +189,19 @@
         const events = [
             {
                 date: '2025-01-15',
+                time: '13:00 - 17:00',
                 title: 'Robotic Battle Tournament',
                 description: 'New Soho Lobby D Floor 1 Tournament Robots vs Robots.',
             },
             {
                 date: '2025-02-10',
+                time: '12:00 - 15:00',
                 title: 'Robotics Competition',
                 description: 'BINUS vs UMN, Lomba rakit dan program robot.',
             },
             {
                 date: '2025-03-05',
+                time: '09:00 - 18:00',
                 title: 'Robotics National Competition',
                 description: 'Jakarta Pusat, Monas, kompetisi nasional antar universitas di seluruh pulau Jawa.',
             },
@@ -221,6 +224,7 @@
             eventDetails.innerHTML = `
                 <h2>${selectedEvent.title}</h2>
                 <p><strong>Date:</strong> ${selectedEvent.date}</p>
+                <p><strong>Time:</strong> ${selectedEvent.time}</p>
                 <p>${selectedEvent.description}</p>
             `;
         }
