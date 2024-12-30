@@ -204,6 +204,83 @@
         footer p {
             margin: 0;
         }
+        
+        @media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo.left,
+    .logo.right {
+        height: 60px;
+        width: auto;
+        margin: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr); /* Dua kolom untuk layar kecil */
+        gap: 15px;
+    }
+
+    .item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hover-text {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .popup-content {
+        padding: 20px;
+    }
+
+    .popup-content p {
+        font-size: 16px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        grid-template-columns: 1fr; /* Satu kolom untuk layar sangat kecil */
+        gap: 10px;
+    }
+
+    .item {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hover-text {
+        font-size: 8px;
+    }
+
+    .popup-content p {
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
