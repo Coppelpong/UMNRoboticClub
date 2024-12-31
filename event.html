@@ -1,134 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Bootstrap CSS -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-8L5nO9Icx2f9tOlMzFTRWz7bN3jZ9gT9EdJ7hrNfqE+Y5PS8Mc/a1u3zlrZoS4Z5" 
+        crossorigin="anonymous"
+    >
+
     <style>
-        html {
+        html, body {
             height: 100%;
-        }
-        
-        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-size: cover;
             background-image: url("image/event_bg.png");
             color: aqua;
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #33333397;
+            background-color: rgba(51, 51, 51, 0.7);
             padding: 10px 20px;
-            color: aqua;
-            font-size: 20px;
-            font-weight: bold;
         }
 
-        .logo { 
-            width: 45px; 
-        } 
+        .logo {
+            width: 45px;
+        }
 
-        .logo.left{
+        .logo.left {
             height: 80px;
             width: 160px;
         }
 
-        .logo.right{
+        .logo.right {
             height: 80px;
-        }
-
-        .logo.left, .logo.right { 
-            align-self: flex-start; 
-        } 
-
-        nav { 
-            display: flex; 
-            align-items: left; 
-            flex: 1; 
-        } 
-
-        nav ul { 
-            display: flex; 
-            list-style: none; 
-            margin: 0; 
-            padding: 0; 
-        } 
-
-        nav ul li { 
-            margin-right: 10px; 
-            margin-top: -10px;
-            margin-left: 15px;
-        } 
-
-        nav ul li a { 
-            color: aqua; 
-            text-decoration: none;
-        }
-
-        nav ul li a.active {
-            text-decoration: underline;
-            text-underline-offset: 5px; 
-            text-decoration-thickness: 2px; 
-            color: aqua; 
-        }
-
-        .social-icons {
-            display: flex;
-        }
-
-        .social-icons a {
-            margin-left: 10px;
-            margin-top: -10px;
-        }
-
-        .social-icons img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .left-square, .right-square {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .left-square {
-            width: 200px;
-            min-height: 300px;
-        }
-
-        .right-square {
-            width: 400px;
-            min-height: 300px;
-        }
-
-        .event-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .event-list li {
-            cursor: pointer;
-            margin-bottom: 10px;
-            color: aqua;
-        }
-
-        .event-list li:hover {
-            text-decoration: underline;
         }
 
         footer {
@@ -142,67 +49,66 @@
         footer p {
             margin: 0;
         }
-
-        @media screen and (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .left-square, .right-square {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .event-list li {
-        font-size: 16px;
-    }
-}
     </style>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event</title>
 </head>
 <body>
-    <header>
+    <header class="d-flex justify-content-between align-items-center">
         <img src="image/ukm_logo.png" alt="UMN Robotic Club Logo" class="logo left">
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="event.html" class="active">Event</a></li>
-                <li><a href="studies.html">Studies</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
+            <ul class="nav">
+                <li class="nav-item"><a href="index.html" class="nav-link text-aqua">Home</a></li>
+                <li class="nav-item"><a href="event.html" class="nav-link active text-aqua">Event</a></li>
+                <li class="nav-item"><a href="studies.html" class="nav-link text-aqua">Studies</a></li>
+                <li class="nav-item"><a href="schedule.html" class="nav-link text-aqua">Schedule</a></li>
             </ul>
         </nav>
         <a href="https://www.umn.ac.id/" target="_blank">
-        <img src="image/umn_logo.png" alt="UMN Logo" class="logo right">
+            <img src="image/umn_logo.png" alt="UMN Logo" class="logo right">
         </a>
     </header>
-    <main>
-        <div class="content">
-            <div class="left-square">
-                <h2>Upcoming Events</h2>
-                <ul class="event-list" id="eventList">
-                </ul>
+
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="p-3 bg-dark text-white rounded">
+                    <h2>Upcoming Events</h2>
+                    <ul class="list-group" id="eventList">
+                        <!-- Event dates will populate here -->
+                    </ul>
+                </div>
             </div>
-            <div class="right-square" id="eventDetails">
-                <h2>Event Details</h2>
-                <p>Select a date to view event details.</p>
+            <div class="col-md-8">
+                <div class="p-3 bg-dark text-white rounded" id="eventDetails">
+                    <h2>Event Details</h2>
+                    <p>Select a date to view event details.</p>
+                </div>
             </div>
         </div>
     </main>
+
     <footer>
         <p>UMN.Robotic.Club<br>Club Association Of UMN Robotic<br></p>
         <p>&copy; 2024 | This site has copyright.</p>
-        <div class="social-icons">
-                <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank">
-                    <img src="image/insta_icon.png" alt="Instagram">
-                </a>
-                <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
-                    <img src="image/line_icon.png" alt="LINE">
-                </a>
+        <div class="d-flex justify-content-center">
+            <a href="https://www.instagram.com/umnroboticclub?igsh=aWI3MmU1NXh3MDE=" target="_blank" class="me-2">
+                <img src="image/insta_icon.png" alt="Instagram" width="24" height="24">
+            </a>
+            <a href="https://line.me/R/ti/g/9sE5tNjj3m" target="_blank">
+                <img src="image/line_icon.png" alt="LINE" width="24" height="24">
+            </a>
         </div>
     </footer>
+
+    <!-- Bootstrap and Optional JavaScript -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-QFYcHefJI7ecAE6xwn2XjtXzXT9uU7xGMl7ybaiC8luA6a6m4vBSs5V6zmy2uaeB" 
+        crossorigin="anonymous"
+    ></script>
     <script>
         const events = [
             {
@@ -228,6 +134,7 @@
         const eventList = document.getElementById('eventList');
         events.forEach((event, index) => {
             const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item', 'list-group-item-action');
             listItem.textContent = event.date;
             listItem.dataset.index = index;
             listItem.addEventListener('click', displayEventDetails);
